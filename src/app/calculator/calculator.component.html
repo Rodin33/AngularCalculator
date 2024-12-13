@@ -1,0 +1,18 @@
+<div class="calculator-container">
+  <h1 class="calculator-title">Calculatrice Scientifique</h1>
+  <div class="calculator">
+    <div class="display">{{ displayValue }}</div>
+    <div class="buttons">
+      <button
+        *ngFor="let button of buttons"
+        [ngClass]="{
+          special: button === 'C' || button === 'CE' || button === '=',
+          enter: button === 'Enter'
+        }"
+        (click)="onButtonClick(button)"
+      >
+        {{ button }}
+      </button>
+    </div>
+  </div>
+</div>
